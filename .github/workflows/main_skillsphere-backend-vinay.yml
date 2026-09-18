@@ -27,6 +27,8 @@ jobs:
 
       - name: Build Backend with Maven Wrapper
         working-directory: ./backend
+        env: 
+             APP_JWT_SECRET: ${{ secrets.APP_JWT_SECRET }}
         run: |
           chmod +x mvnw
           ./mvnw clean package
